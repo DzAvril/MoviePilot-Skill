@@ -1,0 +1,4 @@
+interface:
+  display_name: "MoviePilot Local Control"
+  short_description: "Control a self-hosted MoviePilot via REST API"
+  default_prompt: "Use the local MoviePilot API to manage subscriptions, downloads, library, users, sites, storage, tasks, and plugins."

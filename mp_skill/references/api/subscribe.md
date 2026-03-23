@@ -1,0 +1,28 @@
+## subscribe
+
+- `DELETE /api/v1/subscribe/follow` — 取消Follow订阅分享人
+- `DELETE /api/v1/subscribe/history/{history_id}` — 删除订阅历史
+- `DELETE /api/v1/subscribe/media/{mediaid}` — 删除订阅
+- `DELETE /api/v1/subscribe/share/{share_id}` — 删除分享
+- `DELETE /api/v1/subscribe/{subscribe_id}` — 删除订阅
+- `GET /api/v1/subscribe/` — 查询所有订阅
+- `GET /api/v1/subscribe/check` — 刷新订阅 TMDB 信息
+- `GET /api/v1/subscribe/files/{subscribe_id}` — 订阅相关文件信息
+- `GET /api/v1/subscribe/follow` — 查询已Follow的订阅分享人
+- `GET /api/v1/subscribe/history/{mtype}` — 查询订阅历史
+- `GET /api/v1/subscribe/media/{mediaid}` — 查询订阅
+- `GET /api/v1/subscribe/popular` — 热门订阅（基于用户共享数据）
+- `GET /api/v1/subscribe/refresh` — 刷新订阅
+- `GET /api/v1/subscribe/reset/{subid}` — 重置订阅
+- `GET /api/v1/subscribe/search` — 搜索所有订阅
+- `GET /api/v1/subscribe/search/{subscribe_id}` — 搜索订阅
+- `GET /api/v1/subscribe/share/statistics` — 查询订阅分享统计
+- `GET /api/v1/subscribe/shares` — 查询分享的订阅
+- `GET /api/v1/subscribe/user/{username}` — 用户订阅
+- `GET /api/v1/subscribe/{subscribe_id}` — 订阅详情
+- `POST /api/v1/subscribe/` — 新增订阅
+- `POST /api/v1/subscribe/follow` — Follow订阅分享人
+- `POST /api/v1/subscribe/fork` — 复用订阅
+- `POST /api/v1/subscribe/share` — 分享订阅
+- `PUT /api/v1/subscribe/` — 更新订阅
+- `PUT /api/v1/subscribe/status/{subid}` — 更新订阅状态

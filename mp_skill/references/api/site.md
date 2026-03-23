@@ -1,0 +1,26 @@
+## site
+
+- `DELETE /api/v1/site/{site_id}` — 删除站点
+- `GET /api/v1/site/` — 所有站点
+- `GET /api/v1/site/auth` — 查询认证站点
+- `GET /api/v1/site/category/{site_id}` — 站点分类
+- `GET /api/v1/site/cookie/{site_id}` — 更新站点Cookie&UA
+- `GET /api/v1/site/cookiecloud` — CookieCloud同步
+- `GET /api/v1/site/domain/{site_url}` — 站点详情
+- `GET /api/v1/site/icon/{site_id}` — 站点图标
+- `GET /api/v1/site/mapping` — 获取站点域名到名称的映射
+- `GET /api/v1/site/reset` — 重置站点
+- `GET /api/v1/site/resource/{site_id}` — 站点资源
+- `GET /api/v1/site/rss` — 所有订阅站点
+- `GET /api/v1/site/statistic` — 所有站点统计信息
+- `GET /api/v1/site/statistic/{site_url}` — 特定站点统计信息
+- `GET /api/v1/site/supporting` — 获取支持的站点列表
+- `GET /api/v1/site/test/{site_id}` — 连接测试
+- `GET /api/v1/site/userdata/latest` — 查询所有站点最新用户数据
+- `GET /api/v1/site/userdata/{site_id}` — 查询某站点用户数据
+- `GET /api/v1/site/{site_id}` — 站点详情
+- `POST /api/v1/site/` — 新增站点
+- `POST /api/v1/site/auth` — 用户站点认证
+- `POST /api/v1/site/priorities` — 批量更新站点优先级
+- `POST /api/v1/site/userdata/{site_id}` — 更新站点用户数据
+- `PUT /api/v1/site/` — 更新站点
