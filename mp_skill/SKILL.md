@@ -56,16 +56,16 @@ For other endpoints, the summary falls back to generic key previews.
 
 ```bash
 # Read-only info
-python3 /Users/xuzhi/Documents/workspace/MoviePilot-Skill/mp_skill/scripts/mp_request.py GET /api/v1/user/current
+python3 scripts/mp_request.py GET /api/v1/user/current
 
 # With query string
-python3 /Users/xuzhi/Documents/workspace/MoviePilot-Skill/mp_skill/scripts/mp_request.py GET /api/v1/search --query "keyword=Inception&type=movie&page=1&count=10"
+python3 scripts/mp_request.py GET /api/v1/search --query "keyword=Inception&type=movie&page=1&count=10"
 
 # With JSON body (inline)
-python3 /Users/xuzhi/Documents/workspace/MoviePilot-Skill/mp_skill/scripts/mp_request.py POST /api/v1/subscribe/ --json '{"name":"Example","type":"movie"}'
+python3 scripts/mp_request.py POST /api/v1/subscribe/ --json '{"name":"Example","type":"movie"}'
 
 # With JSON body (file) and write response to disk to reduce token usage
-python3 /Users/xuzhi/Documents/workspace/MoviePilot-Skill/mp_skill/scripts/mp_request.py POST /api/v1/subscribe/ --json @/tmp/payload.json --output /tmp/resp.json
+python3 scripts/mp_request.py POST /api/v1/subscribe/ --json @/tmp/payload.json --output /tmp/resp.json
 ```
 
 ## Common Capabilities (Most Used)

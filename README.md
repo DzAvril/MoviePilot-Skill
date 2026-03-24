@@ -1,14 +1,15 @@
 # MoviePilot-Skill
 
-`mp_skill` is a Codex skill for controlling a self-hosted MoviePilot instance via REST API using `X-API-KEY`.
+`mp_skill` is an agent skill for controlling a self-hosted MoviePilot instance via REST API using `X-API-KEY`.
 
 ## Skill Location
 
 The skill source lives in:
-`/Users/xuzhi/Documents/workspace/MoviePilot-Skill/mp_skill`
+`<workspace>/mp_skill`
 
-Symlink for Codex discovery:
-`/Users/xuzhi/.codex/skills/mp_skill`
+To enable discovery, place or link `mp_skill` inside your agent’s skill search path.
+Example:
+`$AGENT_HOME/skills/mp_skill` (or the agent-specific skills directory)
 
 ## Configuration
 
