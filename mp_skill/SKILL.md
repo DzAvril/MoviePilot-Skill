@@ -22,6 +22,24 @@ Environment overrides (optional):
 - Script: `scripts/mp_request.py`
 - It attaches auth safely and avoids echoing secrets.
 
+## Large Response Handling (Auto-Compact)
+
+When JSON responses are large, the script automatically:
+- Saves the raw response to a file
+- Prints a compact summary (counts + key fields preview)
+
+You can also force compacting:
+`--compact --raw-out /tmp/mp_skill_raw.json`
+
+### Smart Summaries for Common Endpoints
+
+The compact preview is tuned for:
+- Subscriptions (`/subscribe*`)
+- Search results (`/search*`)
+- Recommendations (`/recommend*`)
+
+For other endpoints, the summary falls back to generic key previews.
+
 3. Minimize token usage:
 - Use `references/api_index.md` to pick a capability area, then open only that file under `references/api/`.
 - Only open `references/openapi.json` when you need schema or parameter details.
