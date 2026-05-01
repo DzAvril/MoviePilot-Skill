@@ -91,3 +91,14 @@ python3 scripts/mp_request.py POST /api/v1/subscribe/ --json @/tmp/payload.json 
 - `references/api_index.md` — Primary routing index to find the right capability file.
 - `references/api/*.md` — One file per capability area (open only what you need).
 - `references/openapi.json` — Filtered schema containing only X-API-KEY supported endpoints.
+- `scripts/refresh_openapi_refs.py` — Regenerate `references/api_index.md`, `references/api/*.md`, and `references/openapi.json` from a live MoviePilot `/api/v1/openapi.json`.
+
+## Maintaining This Skill
+
+MoviePilot and plugins can add or remove API endpoints over time. When a live server is available, refresh the API references before making endpoint-specific changes:
+
+```bash
+python3 scripts/refresh_openapi_refs.py --host http://127.0.0.1:3000
+```
+
+The refresh script keeps only operations that advertise `api_key_header` security, matching this skill's X-API-KEY workflow. Review the diff after regenerating because plugin-specific endpoints may appear or disappear depending on the MoviePilot instance.

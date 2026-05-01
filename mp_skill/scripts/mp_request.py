@@ -22,7 +22,9 @@ def load_bytes_value(val: str):
     return val.encode('utf-8')
 
 def safe_write(path: str, data: bytes):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
+    parent = os.path.dirname(path)
+    if parent:
+        os.makedirs(parent, exist_ok=True)
     with open(path, 'wb') as f:
         f.write(data)
     try:

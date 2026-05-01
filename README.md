@@ -29,3 +29,18 @@ Environment overrides:
 ## Notes
 
 Only endpoints that support `X-API-KEY` are included in the skill references.
+
+## Updating API References
+
+MoviePilot and installed plugins can change the OpenAPI schema. Refresh the bundled references from a live instance with:
+
+```bash
+cd mp_skill
+python3 scripts/refresh_openapi_refs.py --host http://your-moviepilot-host:3000
+```
+
+The refresh script filters the live OpenAPI document to operations that support the `api_key_header` security scheme, then regenerates:
+
+- `references/openapi.json`
+- `references/api_index.md`
+- `references/api/*.md`

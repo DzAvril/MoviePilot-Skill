@@ -1,48 +1,105 @@
 ## plugin
 
-- `DELETE /api/v1/plugin/EmbyRating/history` — 清除评分更新历史记录
-- `DELETE /api/v1/plugin/WatchSync/records/old` — 清理旧记录
-- `DELETE /api/v1/plugin/folders/{folder_name}` — 删除插件文件夹
-- `DELETE /api/v1/plugin/{plugin_id}` — 卸载插件
 - `GET /api/v1/plugin/` — 所有插件
 - `GET /api/v1/plugin/AutoBackup/backup` — MoviePilot备份
 - `GET /api/v1/plugin/AutoSignIn/signin_by_domain` — 站点签到
 - `GET /api/v1/plugin/BilibiliDiscover/bilibili_discover` — 哔哩哔哩探索数据源
 - `GET /api/v1/plugin/CCTVDiscover/cctv_discover` — CCTV探索数据源
-- `GET /api/v1/plugin/CloudAssistant/cloud_assistant` — 云盘助手同步
 - `GET /api/v1/plugin/DoubanRankPlus/delete_history` — 删除豆瓣榜单Plus历史记录
 - `GET /api/v1/plugin/DoubanRankPlus/migrate-config` — 获取豆瓣榜单Plus配置
 - `GET /api/v1/plugin/DoubanRankPlus/migrate-history` — 获取豆瓣榜单Plus历史记录
 - `GET /api/v1/plugin/DoubanSync/delete_history` — 删除豆瓣同步历史记录
 - `GET /api/v1/plugin/EmbyRating/config` — 获取插件配置
+- `POST /api/v1/plugin/EmbyRating/config` — 设置插件配置
+- `DELETE /api/v1/plugin/EmbyRating/history` — 清除评分更新历史记录
 - `GET /api/v1/plugin/EmbyRating/history` — 获取评分更新历史记录
 - `GET /api/v1/plugin/EmbyRating/monitor_dirs` — 获取监控目录
+- `POST /api/v1/plugin/EmbyRating/run` — 立即运行评分更新
 - `GET /api/v1/plugin/EpisodeGroupMeta/delete_media_database` — 剧集组刮削
 - `GET /api/v1/plugin/EpisodeGroupMeta/start_rt` — 剧集组刮削
 - `GET /api/v1/plugin/FileSoftLink/softlink_sync` — 实时软连接同步
+- `POST /api/v1/plugin/LogsClean/batch_delete` — 批量删除日志文件
+- `POST /api/v1/plugin/LogsClean/clean` — 触发手动清理
+- `POST /api/v1/plugin/LogsClean/clean_plugin` — 清理指定插件日志
 - `GET /api/v1/plugin/LogsClean/config` — 获取当前配置
+- `POST /api/v1/plugin/LogsClean/config` — 保存配置
+- `POST /api/v1/plugin/LogsClean/delete_log` — 删除指定日志文件
+- `POST /api/v1/plugin/LogsClean/delete_split_logs` — 删除指定插件的所有分割日志文件
 - `GET /api/v1/plugin/LogsClean/installed_plugins` — 获取已安装插件列表
 - `GET /api/v1/plugin/LogsClean/logs_stats` — 获取插件日志统计信息
 - `GET /api/v1/plugin/LogsClean/status` — 获取状态和历史
 - `GET /api/v1/plugin/MCPServer/config` — 获取当前配置
+- `POST /api/v1/plugin/MCPServer/config` — 保存配置
+- `POST /api/v1/plugin/MCPServer/download_torrent` — 下载种子
 - `GET /api/v1/plugin/MCPServer/process-stats` — 获取MCP服务器进程资源占用统计
+- `POST /api/v1/plugin/MCPServer/restart` — 重启服务器
+- `POST /api/v1/plugin/MCPServer/start` — 启动服务器
 - `GET /api/v1/plugin/MCPServer/status` — 获取服务器状态
+- `POST /api/v1/plugin/MCPServer/stop` — 停止服务器
+- `POST /api/v1/plugin/MCPServer/test-token` — 测试访问令牌
+- `POST /api/v1/plugin/MCPServer/token` — 生成新的API令牌
 - `GET /api/v1/plugin/MangGuoDiscover/mangguo_discover` — 芒果TV探索数据源
+- `POST /api/v1/plugin/McpToolExample/mcp_prompt_execute` — 执行MCP提示
+- `POST /api/v1/plugin/McpToolExample/mcp_tool_execute` — 执行MCP工具
+- `POST /api/v1/plugin/MediaCoverGenerator/clean_fonts` — 立即清理字体缓存
+- `POST /api/v1/plugin/MediaCoverGenerator/clean_images` — 立即清理封面图片缓存
 - `GET /api/v1/plugin/MediaCoverGenerator/delete_saved_cover` — 删除一张已保存封面
+- `POST /api/v1/plugin/MediaCoverGenerator/delete_saved_cover` — 删除一张已保存封面
 - `GET /api/v1/plugin/MediaCoverGenerator/generate_now` — 立即生成媒体库封面
+- `POST /api/v1/plugin/MediaCoverGenerator/generate_now` — 立即生成媒体库封面
 - `GET /api/v1/plugin/MediaCoverGenerator/saved_cover_image` — 获取已保存封面图片
+- `POST /api/v1/plugin/MediaCoverGenerator/select_style_1` — 选择风格1
+- `POST /api/v1/plugin/MediaCoverGenerator/select_style_2` — 选择风格2
+- `POST /api/v1/plugin/MediaCoverGenerator/select_style_3` — 选择风格3
+- `POST /api/v1/plugin/MediaCoverGenerator/select_style_4` — 选择风格4
 - `GET /api/v1/plugin/MediaCoverGenerator/set_cover_style` — 保存封面风格选择
+- `POST /api/v1/plugin/MediaCoverGenerator/set_cover_style` — 保存封面风格选择
+- `POST /api/v1/plugin/MediaCoverGenerator/set_page_tab_clean` — 切换到清理页
+- `POST /api/v1/plugin/MediaCoverGenerator/set_page_tab_generate` — 切换到生成页
+- `POST /api/v1/plugin/MediaCoverGenerator/set_page_tab_history` — 切换到历史页
+- `POST /api/v1/plugin/MediaCoverGenerator/toggle_style_variant` — 切换静态/动态
+- `POST /api/v1/plugin/MediaCoverGeneratorclean_fonts` — 立即清理字体缓存(兼容无前导斜杠)
+- `POST /api/v1/plugin/MediaCoverGeneratorclean_images` — 立即清理封面图片缓存(兼容无前导斜杠)
 - `GET /api/v1/plugin/MediaCoverGeneratordelete_saved_cover` — 删除一张已保存封面(兼容无前导斜杠)
+- `POST /api/v1/plugin/MediaCoverGeneratordelete_saved_cover` — 删除一张已保存封面(兼容无前导斜杠)
 - `GET /api/v1/plugin/MediaCoverGeneratorgenerate_now` — 立即生成媒体库封面(兼容无前导斜杠)
+- `POST /api/v1/plugin/MediaCoverGeneratorgenerate_now` — 立即生成媒体库封面(兼容无前导斜杠)
 - `GET /api/v1/plugin/MediaCoverGeneratorsaved_cover_image` — 获取已保存封面图片(兼容)
+- `POST /api/v1/plugin/MediaCoverGeneratorselect_style_1` — 选择风格1(兼容)
+- `POST /api/v1/plugin/MediaCoverGeneratorselect_style_2` — 选择风格2(兼容)
+- `POST /api/v1/plugin/MediaCoverGeneratorselect_style_3` — 选择风格3(兼容)
+- `POST /api/v1/plugin/MediaCoverGeneratorselect_style_4` — 选择风格4(兼容)
 - `GET /api/v1/plugin/MediaCoverGeneratorset_cover_style` — 保存封面风格选择(兼容无前导斜杠)
+- `POST /api/v1/plugin/MediaCoverGeneratorset_cover_style` — 保存封面风格选择(兼容无前导斜杠)
+- `POST /api/v1/plugin/MediaCoverGeneratorset_page_tab_clean` — 切换到清理页(兼容)
+- `POST /api/v1/plugin/MediaCoverGeneratorset_page_tab_generate` — 切换到生成页(兼容)
+- `POST /api/v1/plugin/MediaCoverGeneratorset_page_tab_history` — 切换到历史页(兼容)
+- `POST /api/v1/plugin/MediaCoverGeneratortoggle_style_variant` — 切换静态/动态(兼容)
+- `POST /api/v1/plugin/P115Disk/clear_cache` — 清理缓存
+- `POST /api/v1/plugin/P115StrgmSub/clear_history` — 清空历史记录
 - `GET /api/v1/plugin/P115StrgmSub/sync_subscribes` — 执行同步订阅追更
+- `POST /api/v1/plugin/P115StrmHelper/add_offline_task` — 添加离线下载任务
 - `GET /api/v1/plugin/P115StrmHelper/add_transfer_share` — 添加分享转存整理
+- `POST /api/v1/plugin/P115StrmHelper/api_strm_sync_creata` — API 请求生成 STRM
+- `POST /api/v1/plugin/P115StrmHelper/api_strm_sync_create_by_path` — API 请求生成 STRM（通过一组文件夹路径）
+- `POST /api/v1/plugin/P115StrmHelper/api_strm_sync_remove` — API 请求删除无效 STRM 文件
 - `GET /api/v1/plugin/P115StrmHelper/browse_dir` — 浏览目录
 - `GET /api/v1/plugin/P115StrmHelper/check_aliyundrive_qrcode` — 检查阿里云盘二维码状态
 - `GET /api/v1/plugin/P115StrmHelper/check_feature` — 判断是否有权限使用此增强功能
+- `POST /api/v1/plugin/P115StrmHelper/check_life_event_status` — 检查115生活事件线程状态并测试拉取数据
 - `GET /api/v1/plugin/P115StrmHelper/check_qrcode` — 检查二维码状态
+- `POST /api/v1/plugin/P115StrmHelper/clear_302_cache` — 清理302跳转缓存
+- `POST /api/v1/plugin/P115StrmHelper/clear_id_path_cache` — 清理文件路径ID缓存
+- `POST /api/v1/plugin/P115StrmHelper/clear_increment_skip_cache` — 清理增量同步跳过路径缓存
+- `POST /api/v1/plugin/P115StrmHelper/delete_all_strm_sync_history` — 清空全部 STRM 执行历史
+- `POST /api/v1/plugin/P115StrmHelper/delete_all_sync_del_history` — 一键删除所有同步删除历史记录
+- `POST /api/v1/plugin/P115StrmHelper/delete_strm_sync_history` — 删除单条 STRM 执行历史
+- `POST /api/v1/plugin/P115StrmHelper/delete_sync_del_history` — 删除同步删除历史记录
+- `POST /api/v1/plugin/P115StrmHelper/full_sync` — 执行全量同步
+- `POST /api/v1/plugin/P115StrmHelper/full_sync_db` — 执行全量同步
+- `POST /api/v1/plugin/P115StrmHelper/fuse_mount` — 挂载 FUSE 文件系统
 - `GET /api/v1/plugin/P115StrmHelper/fuse_status` — 获取 FUSE 状态
+- `POST /api/v1/plugin/P115StrmHelper/fuse_unmount` — 卸载 FUSE 文件系统
 - `GET /api/v1/plugin/P115StrmHelper/generate_emby2alist_config` — 生成媒体重定向配置（emby2Alist / Emby 302 反向代理）
 - `GET /api/v1/plugin/P115StrmHelper/get_aliyundrive_qrcode` — 获取阿里云盘登录二维码
 - `GET /api/v1/plugin/P115StrmHelper/get_authorization_status` — 获取机器授权状态
@@ -51,129 +108,87 @@
 - `GET /api/v1/plugin/P115StrmHelper/get_machine_id` — 获取 Machine ID
 - `GET /api/v1/plugin/P115StrmHelper/get_qrcode` — 获取登录二维码
 - `GET /api/v1/plugin/P115StrmHelper/get_status` — 获取状态
+- `GET /api/v1/plugin/P115StrmHelper/get_strm_sync_history` — 获取 STRM 同步执行历史
 - `GET /api/v1/plugin/P115StrmHelper/get_sync_del_history` — 获取同步删除历史记录
+- `POST /api/v1/plugin/P115StrmHelper/manual_transfer` — 手动触发网盘整理
+- `POST /api/v1/plugin/P115StrmHelper/mcp/messages` — MCP 消息端点
 - `GET /api/v1/plugin/P115StrmHelper/mcp/sse` — MCP SSE 端点
+- `POST /api/v1/plugin/P115StrmHelper/offline_tasks` — 离线任务列表
+- `POST /api/v1/plugin/P115StrmHelper/save_config` — 保存配置
+- `GET /api/v1/plugin/P115StrmHelper/share_strm_cleanup_batch_paths` — 分页获取待确认批次内的 STRM 路径
+- `POST /api/v1/plugin/P115StrmHelper/share_strm_cleanup_cancel` — 取消一批待确认的分享 STRM 清理
+- `POST /api/v1/plugin/P115StrmHelper/share_strm_cleanup_execute` — 确认执行一批分享 STRM 清理
+- `GET /api/v1/plugin/P115StrmHelper/share_strm_cleanup_last_summary` — 上次分享 STRM 清理扫描摘要
+- `GET /api/v1/plugin/P115StrmHelper/share_strm_cleanup_pending` — 列出待确认的分享 STRM 清理批次
+- `POST /api/v1/plugin/P115StrmHelper/share_strm_cleanup_scan` — 立即执行分享 STRM 清理扫描
+- `POST /api/v1/plugin/P115StrmHelper/share_strm_missing_media_clear` — 清空或删除分享 STRM 缺失媒体记录
+- `GET /api/v1/plugin/P115StrmHelper/share_strm_missing_media_list` — 分页列出分享 STRM 缺失媒体
+- `POST /api/v1/plugin/P115StrmHelper/share_sync` — 执行分享同步
+- `POST /api/v1/plugin/P115StrmHelper/strm_cleanup_cancel` — 取消一批待确认的 STRM 清理
+- `POST /api/v1/plugin/P115StrmHelper/strm_cleanup_execute` — 确认执行一批 STRM 清理
+- `GET /api/v1/plugin/P115StrmHelper/strm_cleanup_pending` — 列出待二次确认的 STRM 清理批次
 - `GET /api/v1/plugin/P115StrmHelper/user_storage_status` — 获取115用户基本信息和空间状态
 - `GET /api/v1/plugin/PluginHeatMonitor/config` — 获取当前配置
+- `POST /api/v1/plugin/PluginHeatMonitor/config` — 保存配置
 - `GET /api/v1/plugin/PluginHeatMonitor/data` — 获取仪表板数据
 - `GET /api/v1/plugin/PluginHeatMonitor/heatmap-data` — 获取热力图数据
+- `POST /api/v1/plugin/PluginHeatMonitor/mcp_prompt_execute` — 执行MCP提示
+- `POST /api/v1/plugin/PluginHeatMonitor/mcp_tool_execute` — 执行MCP工具
 - `GET /api/v1/plugin/PluginHeatMonitor/month-data/<month_key>` — 获取月份数据
 - `GET /api/v1/plugin/PluginHeatMonitor/plugin-heatmap` — 获取指定插件的热力图数据
 - `GET /api/v1/plugin/PluginHeatMonitor/plugin-list` — 获取监控插件列表
 - `GET /api/v1/plugin/PluginHeatMonitor/plugins` — 获取可用插件列表
+- `POST /api/v1/plugin/PluginHeatMonitor/reset-data` — 重置插件数据
+- `POST /api/v1/plugin/PluginHeatMonitor/reset-plugin-heatmap` — 重置指定插件的热力图数据
+- `POST /api/v1/plugin/PluginHeatMonitor/run_once` — 立即运行一次
 - `GET /api/v1/plugin/PluginHeatMonitor/status` — 获取插件状态
 - `GET /api/v1/plugin/PluginHeatMonitor/year-data/<year>` — 获取年份数据
 - `GET /api/v1/plugin/PluginManagerVue/last_reload` — 获取上次重载的插件
 - `GET /api/v1/plugin/PluginManagerVue/online_info/{plugin_id}` — 获取在线插件信息
 - `GET /api/v1/plugin/PluginManagerVue/plugins` — 获取插件列表
+- `POST /api/v1/plugin/PluginManagerVue/reinstall` — 重装插件
+- `POST /api/v1/plugin/PluginManagerVue/reload` — 重载插件
 - `GET /api/v1/plugin/PluginManagerVue/status` — 获取插件状态
+- `POST /api/v1/plugin/PluginManagerVue/uninstall` — 卸载插件
 - `GET /api/v1/plugin/SiliconKeyManager/config` — 获取当前配置
+- `POST /api/v1/plugin/SiliconKeyManager/config` — 保存配置
 - `GET /api/v1/plugin/SiliconKeyManager/data` — 获取仪表板数据
 - `GET /api/v1/plugin/SiliconKeyManager/keys` — 获取所有API keys
+- `POST /api/v1/plugin/SiliconKeyManager/keys/add` — 添加API keys
+- `POST /api/v1/plugin/SiliconKeyManager/keys/check` — 检查API keys
+- `POST /api/v1/plugin/SiliconKeyManager/keys/delete` — 删除API keys
+- `POST /api/v1/plugin/SiliconKeyManager/run_once` — 立即运行一次
 - `GET /api/v1/plugin/SiliconKeyManager/stats` — 获取统计信息
 - `GET /api/v1/plugin/SiteStatistic/refresh_by_domain` — 刷新站点数据
 - `GET /api/v1/plugin/TencentVideoDiscover/tencentvideo_discover` — 腾讯视频探索数据源
 - `GET /api/v1/plugin/TvdbDiscover/tvdb_discover` — TheTVDB探索数据源
 - `GET /api/v1/plugin/WatchSync/records` — 获取同步记录
+- `DELETE /api/v1/plugin/WatchSync/records/old` — 清理旧记录
 - `GET /api/v1/plugin/WatchSync/servers` — 获取Emby服务器列表
 - `GET /api/v1/plugin/WatchSync/stats` — 获取同步统计
 - `GET /api/v1/plugin/WatchSync/status` — 获取同步状态
 - `GET /api/v1/plugin/WatchSync/users` — 获取服务器用户列表
+- `POST /api/v1/plugin/clone/{plugin_id}` — 创建插件分身
 - `GET /api/v1/plugin/dashboard/meta` — 获取所有插件仪表板元信息
 - `GET /api/v1/plugin/dashboard/{plugin_id}` — 获取插件仪表板配置
 - `GET /api/v1/plugin/dashboard/{plugin_id}/{key}` — 获取插件仪表板配置
 - `GET /api/v1/plugin/folders` — 获取插件文件夹配置
+- `POST /api/v1/plugin/folders` — 保存插件文件夹配置
+- `DELETE /api/v1/plugin/folders/{folder_name}` — 删除插件文件夹
+- `POST /api/v1/plugin/folders/{folder_name}` — 创建插件文件夹
+- `PUT /api/v1/plugin/folders/{folder_name}/plugins` — 更新文件夹中的插件
 - `GET /api/v1/plugin/form/{plugin_id}` — 获取插件表单页面
 - `GET /api/v1/plugin/install/{plugin_id}` — 安装插件
 - `GET /api/v1/plugin/installed` — 已安装插件
 - `GET /api/v1/plugin/nexusinvitee/config` — 获取配置
 - `GET /api/v1/plugin/nexusinvitee/get_invitees` — 获取被邀请人列表
 - `GET /api/v1/plugin/nexusinvitee/refresh_data` — 刷新数据
+- `POST /api/v1/plugin/nexusinvitee/update_config` — 更新配置
 - `GET /api/v1/plugin/page/{plugin_id}` — 获取插件数据页面
 - `GET /api/v1/plugin/reload/{plugin_id}` — 重新加载插件
 - `GET /api/v1/plugin/reset/{plugin_id}` — 重置插件配置及数据
+- `GET /api/v1/plugin/sidebar_nav` — 获取插件侧栏导航项
 - `GET /api/v1/plugin/statistic` — 插件安装统计
+- `DELETE /api/v1/plugin/{plugin_id}` — 卸载插件
 - `GET /api/v1/plugin/{plugin_id}` — 获取插件配置
-- `POST /api/v1/plugin/EmbyRating/config` — 设置插件配置
-- `POST /api/v1/plugin/EmbyRating/run` — 立即运行评分更新
-- `POST /api/v1/plugin/LogsClean/batch_delete` — 批量删除日志文件
-- `POST /api/v1/plugin/LogsClean/clean` — 触发手动清理
-- `POST /api/v1/plugin/LogsClean/clean_plugin` — 清理指定插件日志
-- `POST /api/v1/plugin/LogsClean/config` — 保存配置
-- `POST /api/v1/plugin/LogsClean/delete_log` — 删除指定日志文件
-- `POST /api/v1/plugin/LogsClean/delete_split_logs` — 删除指定插件的所有分割日志文件
-- `POST /api/v1/plugin/MCPServer/config` — 保存配置
-- `POST /api/v1/plugin/MCPServer/download_torrent` — 下载种子
-- `POST /api/v1/plugin/MCPServer/restart` — 重启服务器
-- `POST /api/v1/plugin/MCPServer/start` — 启动服务器
-- `POST /api/v1/plugin/MCPServer/stop` — 停止服务器
-- `POST /api/v1/plugin/MCPServer/test-token` — 测试访问令牌
-- `POST /api/v1/plugin/MCPServer/token` — 生成新的API令牌
-- `POST /api/v1/plugin/McpToolExample/mcp_prompt_execute` — 执行MCP提示
-- `POST /api/v1/plugin/McpToolExample/mcp_tool_execute` — 执行MCP工具
-- `POST /api/v1/plugin/MediaCoverGenerator/clean_fonts` — 立即清理字体缓存
-- `POST /api/v1/plugin/MediaCoverGenerator/clean_images` — 立即清理封面图片缓存
-- `POST /api/v1/plugin/MediaCoverGenerator/delete_saved_cover` — 删除一张已保存封面
-- `POST /api/v1/plugin/MediaCoverGenerator/generate_now` — 立即生成媒体库封面
-- `POST /api/v1/plugin/MediaCoverGenerator/select_style_1` — 选择风格1
-- `POST /api/v1/plugin/MediaCoverGenerator/select_style_2` — 选择风格2
-- `POST /api/v1/plugin/MediaCoverGenerator/select_style_3` — 选择风格3
-- `POST /api/v1/plugin/MediaCoverGenerator/select_style_4` — 选择风格4
-- `POST /api/v1/plugin/MediaCoverGenerator/set_cover_style` — 保存封面风格选择
-- `POST /api/v1/plugin/MediaCoverGenerator/set_page_tab_clean` — 切换到清理页
-- `POST /api/v1/plugin/MediaCoverGenerator/set_page_tab_generate` — 切换到生成页
-- `POST /api/v1/plugin/MediaCoverGenerator/set_page_tab_history` — 切换到历史页
-- `POST /api/v1/plugin/MediaCoverGenerator/toggle_style_variant` — 切换静态/动态
-- `POST /api/v1/plugin/MediaCoverGeneratorclean_fonts` — 立即清理字体缓存(兼容无前导斜杠)
-- `POST /api/v1/plugin/MediaCoverGeneratorclean_images` — 立即清理封面图片缓存(兼容无前导斜杠)
-- `POST /api/v1/plugin/MediaCoverGeneratordelete_saved_cover` — 删除一张已保存封面(兼容无前导斜杠)
-- `POST /api/v1/plugin/MediaCoverGeneratorgenerate_now` — 立即生成媒体库封面(兼容无前导斜杠)
-- `POST /api/v1/plugin/MediaCoverGeneratorselect_style_1` — 选择风格1(兼容)
-- `POST /api/v1/plugin/MediaCoverGeneratorselect_style_2` — 选择风格2(兼容)
-- `POST /api/v1/plugin/MediaCoverGeneratorselect_style_3` — 选择风格3(兼容)
-- `POST /api/v1/plugin/MediaCoverGeneratorselect_style_4` — 选择风格4(兼容)
-- `POST /api/v1/plugin/MediaCoverGeneratorset_cover_style` — 保存封面风格选择(兼容无前导斜杠)
-- `POST /api/v1/plugin/MediaCoverGeneratorset_page_tab_clean` — 切换到清理页(兼容)
-- `POST /api/v1/plugin/MediaCoverGeneratorset_page_tab_generate` — 切换到生成页(兼容)
-- `POST /api/v1/plugin/MediaCoverGeneratorset_page_tab_history` — 切换到历史页(兼容)
-- `POST /api/v1/plugin/MediaCoverGeneratortoggle_style_variant` — 切换静态/动态(兼容)
-- `POST /api/v1/plugin/P115Disk/clear_cache` — 清理缓存
-- `POST /api/v1/plugin/P115StrgmSub/clear_history` — 清空历史记录
-- `POST /api/v1/plugin/P115StrmHelper/add_offline_task` — 添加离线下载任务
-- `POST /api/v1/plugin/P115StrmHelper/api_strm_sync_creata` — API 请求生成 STRM
-- `POST /api/v1/plugin/P115StrmHelper/api_strm_sync_create_by_path` — API 请求生成 STRM（通过一组文件夹路径）
-- `POST /api/v1/plugin/P115StrmHelper/api_strm_sync_remove` — API 请求删除无效 STRM 文件
-- `POST /api/v1/plugin/P115StrmHelper/check_life_event_status` — 检查115生活事件线程状态并测试拉取数据
-- `POST /api/v1/plugin/P115StrmHelper/clear_id_path_cache` — 清理文件路径ID缓存
-- `POST /api/v1/plugin/P115StrmHelper/clear_increment_skip_cache` — 清理增量同步跳过路径缓存
-- `POST /api/v1/plugin/P115StrmHelper/delete_all_sync_del_history` — 一键删除所有同步删除历史记录
-- `POST /api/v1/plugin/P115StrmHelper/delete_sync_del_history` — 删除同步删除历史记录
-- `POST /api/v1/plugin/P115StrmHelper/full_sync` — 执行全量同步
-- `POST /api/v1/plugin/P115StrmHelper/full_sync_db` — 执行全量同步
-- `POST /api/v1/plugin/P115StrmHelper/fuse_mount` — 挂载 FUSE 文件系统
-- `POST /api/v1/plugin/P115StrmHelper/fuse_unmount` — 卸载 FUSE 文件系统
-- `POST /api/v1/plugin/P115StrmHelper/manual_transfer` — 手动触发网盘整理
-- `POST /api/v1/plugin/P115StrmHelper/mcp/messages` — MCP 消息端点
-- `POST /api/v1/plugin/P115StrmHelper/offline_tasks` — 离线任务列表
-- `POST /api/v1/plugin/P115StrmHelper/save_config` — 保存配置
-- `POST /api/v1/plugin/P115StrmHelper/share_sync` — 执行分享同步
-- `POST /api/v1/plugin/PluginHeatMonitor/config` — 保存配置
-- `POST /api/v1/plugin/PluginHeatMonitor/mcp_prompt_execute` — 执行MCP提示
-- `POST /api/v1/plugin/PluginHeatMonitor/mcp_tool_execute` — 执行MCP工具
-- `POST /api/v1/plugin/PluginHeatMonitor/reset-data` — 重置插件数据
-- `POST /api/v1/plugin/PluginHeatMonitor/reset-plugin-heatmap` — 重置指定插件的热力图数据
-- `POST /api/v1/plugin/PluginHeatMonitor/run_once` — 立即运行一次
-- `POST /api/v1/plugin/PluginManagerVue/reinstall` — 重装插件
-- `POST /api/v1/plugin/PluginManagerVue/reload` — 重载插件
-- `POST /api/v1/plugin/PluginManagerVue/uninstall` — 卸载插件
-- `POST /api/v1/plugin/SiliconKeyManager/config` — 保存配置
-- `POST /api/v1/plugin/SiliconKeyManager/keys/add` — 添加API keys
-- `POST /api/v1/plugin/SiliconKeyManager/keys/check` — 检查API keys
-- `POST /api/v1/plugin/SiliconKeyManager/keys/delete` — 删除API keys
-- `POST /api/v1/plugin/SiliconKeyManager/run_once` — 立即运行一次
-- `POST /api/v1/plugin/clone/{plugin_id}` — 创建插件分身
-- `POST /api/v1/plugin/folders` — 保存插件文件夹配置
-- `POST /api/v1/plugin/folders/{folder_name}` — 创建插件文件夹
-- `POST /api/v1/plugin/nexusinvitee/update_config` — 更新配置
-- `PUT /api/v1/plugin/folders/{folder_name}/plugins` — 更新文件夹中的插件
 - `PUT /api/v1/plugin/{plugin_id}` — 更新插件配置
