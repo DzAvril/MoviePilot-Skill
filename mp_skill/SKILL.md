@@ -50,10 +50,12 @@ For other endpoints, the summary falls back to generic key previews.
 
 ## Core Workflow
 
-1. Identify the task category (subscriptions, downloads, search, library, storage, etc.).
+1. Identify the task category (subscriptions, downloads, search, library, storage, sites, plugins, workflows, etc.).
 2. Find the endpoint using `references/api_index.md`, then open only the specific `references/api/<area>.md`.
-3. Call with `scripts/mp_request.py`.
-4. If request body or params are unclear, consult `references/openapi.json` for the exact schema.
+3. For subscription, download, plugin, P115, Docker/restart, or site-health tasks, check the focused workflow references below before mutating state.
+4. Call with `scripts/mp_request.py`.
+5. If request body or params are unclear, consult `references/openapi.json` for the exact schema.
+6. Write large resource/search/site responses to disk and summarize only safe fields; torrent and site records can contain cookies, passkeys, tokens, or download URLs.
 
 ### Example Call Patterns
 
@@ -91,11 +93,23 @@ python3 scripts/mp_request.py POST /api/v1/subscribe/ --json @/tmp/payload.json 
 
 ## References
 
+Core endpoint references:
 - `references/api_index.md` — Primary routing index to find the right capability file.
 - `references/api/*.md` — One file per capability area (open only what you need).
 - `references/openapi.json` — Filtered schema containing only X-API-KEY supported endpoints.
-- `references/future-tv-season-false-completion-diagnostics.md` — Diagnose future TV season subscriptions that falsely move to history as `0/0` complete, including cross-season `completed_episode` contamination and target-season download/history checks.
+- `references/moviepilot-skill-maintenance.md` — Live OpenAPI refresh, validation, secret-scan, and contribution notes.
+
+Focused workflow references imported from the production/local skill:
+- Subscriptions and episodes: `references/subscription-workflows.md`, `references/subscription-auto-download-diagnostics.md`, `references/future-tv-season-false-completion-diagnostics.md`, `references/tv-season-postgresql-fallback.md`, `references/movie-subscription-postgresql-fallback.md`, `references/future-movie-subscription-db-readback-without-docker.md`, `references/future-title-subscribe-via-tmdb.md`, `references/future-title-clue-disambiguation-and-duplicate-check.md`, `references/unrecognized-fuzzy-movie-subscription.md`, `references/tv-episode-update-status-check.md`, `references/latest-episode-download-workflow.md`.
+- Search/download/recommendation actions: `references/movie-resource-search-download-workflow.md`, `references/user-workflows-transmission-and-downloads.md`, `references/session-notes-media-downloads-sites.md`, `references/weekend-movie-recommendation-continuation.md`.
+- Site, runtime, Docker, and notification diagnostics: `references/site-cookie-health-and-plugin-ops.md`, `references/moviepilot-high-cpu-diagnostics.md`, `references/moviepilot-ui-api-hang-recovery.md`, `references/moviepilot-cookiecloud-host-update.md`, `references/moviepilot-image-restart-and-self-update.md`, `references/moviepilot-routine-restart.md`, `references/moviepilot-to-hermes-notifications.md`, `references/moviepilot-wechatclawbot-hermes-coexistence.md`.
+- Plugin development/runtime fixes: `references/plugin-development-workflow.md`, `references/plugin-runtime-diagnostics.md`, `references/plugin-local-testing-prereqs.md`, `references/plugin-issue-triage-for-codex.md`, `references/mcpserver-*.md`, `references/removelink-*.md`, `references/qbcommand-scheduled-speed-limit-fix.md`.
+- P115/STRM and media-server helpers: `references/p115strmhelper-api-playbook.md`, `references/p115-strm-emby302-playback-diagnostics.md`, `references/pansou-115-search-integration.md`, `references/zspace-core-adapter-diagnostics.md`.
+
+Scripts:
+- `scripts/mp_request.py` — token-safe request helper with compact output and configurable timeout.
 - `scripts/refresh_openapi_refs.py` — Regenerate `references/api_index.md`, `references/api/*.md`, and `references/openapi.json` from a live MoviePilot `/api/v1/openapi.json`.
+- `scripts/list_p115_mcp_tools.py` — Token-safe urllib probe for P115StrmHelper's MCP SSE `tools/list`.
 
 ## Maintaining This Skill
 
