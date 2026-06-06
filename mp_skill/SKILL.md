@@ -94,6 +94,7 @@ python3 scripts/mp_request.py POST /api/v1/subscribe/ --json @/tmp/payload.json 
 - `references/api_index.md` — Primary routing index to find the right capability file.
 - `references/api/*.md` — One file per capability area (open only what you need).
 - `references/openapi.json` — Filtered schema containing only X-API-KEY supported endpoints.
+- `references/future-tv-season-false-completion-diagnostics.md` — Diagnose future TV season subscriptions that falsely move to history as `0/0` complete, including cross-season `completed_episode` contamination and target-season download/history checks.
 - `scripts/refresh_openapi_refs.py` — Regenerate `references/api_index.md`, `references/api/*.md`, and `references/openapi.json` from a live MoviePilot `/api/v1/openapi.json`.
 
 ## Maintaining This Skill
