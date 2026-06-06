@@ -170,6 +170,7 @@ def main():
     p.add_argument('--max-bytes', type=int, default=50000, help='Threshold for compacting (bytes)')
     p.add_argument('--max-items', type=int, default=20, help='Preview items for large lists')
     p.add_argument('--raw-out', help='Write raw response to file when compacting')
+    p.add_argument('--timeout', type=float, default=60, help='Request timeout in seconds')
     args = p.parse_args()
 
     cfg_host, cfg_key = read_config()
@@ -219,7 +220,7 @@ def main():
 
     req = urllib.request.Request(url, data=body, method=args.method.upper(), headers=headers)
     try:
-        with urllib.request.urlopen(req) as resp:
+        with urllib.request.urlopen(req, timeout=args.timeout) as resp:
             data = resp.read()
             content_type = resp.headers.get('Content-Type', '')
             if args.show_headers:

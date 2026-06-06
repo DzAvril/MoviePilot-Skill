@@ -12,7 +12,10 @@ description: Control a self-hosted MoviePilot instance via its REST API using X-
 Config path: `~/.config/mp_skill/config`
 
 Format:
-```\nMP_HOST=http://192.168.1.93:3001\nMP_API_KEY=your_x_api_key\n```
+```env
+MP_HOST=http://192.168.1.93:3001
+MP_API_KEY=your_x_api_key
+```
 
 Environment overrides (optional):
 - `MOVIEPILOT_URL` or `MP_HOST`
